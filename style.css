@@ -28,7 +28,7 @@ header {
 }
 
 nav a {
-  margin: 0 100px;
+  margin: 0 40px; /* Réduit pour éviter les retours à la ligne */
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
@@ -348,7 +348,7 @@ button[type="submit"]:hover {
   }
 
   nav a {
-    margin: 0 20px;
+    margin: 0 10px; /* encore plus petit sur mobile */
     font-size: 18px;
   }
 }
@@ -463,7 +463,7 @@ button[type="submit"]:hover {
   }
 
   nav a {
-    margin: 0 20px;
+    margin: 0 10px;
     font-size: 18px;
   }
 
