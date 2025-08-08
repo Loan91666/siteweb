@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salle de bain - Jeje28</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Jeje28" class="logo-img" />
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="projets.html" class="active">Réalisations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="https://www.google.com/maps/place/9+Rue+de+la+Croix+Madeleine,+28700+Béville-le-Comte" target="_blank" class="map-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Maps" />
+    </a>
+  </header>
+  <hr/>
+
+  <main>
+    <h1>Salle de bain</h1>
+
+    <div class="carousel-block">
+      <div class="carousel">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-images">
+          <img src="salle de bain/sdb1.jpg" class="active" alt="Salle de bain avant">
+          <img src="salle de bain/sdb2.jpg" alt="Salle de bain après">
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+      <div class="description">
+        <h2>Travaux de salle de bain</h2>
+        <p>Exemples de blablabla.</p>
+      </div>
+    </div>
+
+    <div class="carousel-block">
+      <div class="carousel">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-images">
+          <img src="salle de bain/sdb3.jpg" class="active" alt="Salle de bain avant">
+          <img src="salle de bain/sdb4.jpg" alt="Salle de bain après">
+          <img src="salle de bain/sdb5.jpg" alt="Salle de bain après">
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+      <div class="description">
+        <h2>Travaux de salle de bain</h2>
+        <p>Exemples de blablabla 2.</p>
+      </div>
+    </div>
+
+    <div class="carousel-block">
+      <div class="carousel">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-images">
+          <img src="salle de bain/sdb13.jpg" class="active" alt="Salle de bain avant">
+          <img src="salle de bain/sdb14.jpg" alt="Salle de bain après">
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+      <div class="description">
+        <h2>Travaux de salle de bain</h2>
+        <p>Exemples de blablabla 3.</p>
+      </div>
+    </div>
+
+    <div class="carousel-block">
+      <div class="carousel">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-images">
+          <img src="salle de bain/sdb15.jpg" class="active" alt="Salle de bain avant">
+          <img src="salle de bain/sdb16.jpg" alt="Salle de bain après">
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+      <div class="description">
+        <h2>Travaux de salle de bain</h2>
+        <p>Exemples de blablabla 4.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="contact.html" class="contact-button">Contactez moi</a>
+    <div class="footer-infos">
+      <div>
+        <strong>Adresse :</strong><br/>
+        9 RUE DE LA CROIX MADELEINE<br/>
+        28700 BEVILLE-LE-COMTE
+      </div>
+      <div>
+        <strong>Email :</strong><br/>
+        jeje28.plomberie@gmail.com<br/>
+        <strong>Téléphone :</strong><br/>
+        06 17 85 49 45
+      </div>
+    </div>
+    <p>2025 © Jeje28 - Tous droits réservés / <a href="mentions.html">Mentions légales</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".carousel-block").forEach(block => {
+      const images = block.querySelectorAll(".carousel-images img");
+      const prev = block.querySelector(".carousel-button.prev");
+      const next = block.querySelector(".carousel-button.next");
+      let index = 0;
+
+      function updateCarousel() {
+        images.forEach(img => img.classList.remove("active"));
+        images[index].classList.add("active");
+      }
+
+      prev.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+
+      next.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      });
+    });
+  </script>
+
+</body>
+</html>
