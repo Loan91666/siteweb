@@ -29,13 +29,14 @@
       <div class="carousel">
         <button class="carousel-button prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="salle de bain/sdb1.jpg" class="active" alt="Salle de bain avant">
-          <img src="salle de bain/sdb2.jpg" alt="Salle de bain après">
+          <img src="salle de bain/sdb1.jpg" class="active" alt="Salle de bain avant" data-etat="Avant">
+          <img src="salle de bain/sdb2.jpg" alt="Salle de bain après" data-etat="Après">
         </div>
         <button class="carousel-button next">&#10095;</button>
       </div>
       <div class="description">
         <h2>Rénovation d'une salle de bain</h2>
+        <p class="etat-photo">Avant</p>
         <p>Déscription.</p>
       </div>
     </div>
@@ -110,11 +111,16 @@
       const images = block.querySelectorAll(".carousel-images img");
       const prev = block.querySelector(".carousel-button.prev");
       const next = block.querySelector(".carousel-button.next");
+      const etatPhoto = block.querySelector(".etat-photo");
       let index = 0;
 
       function updateCarousel() {
         images.forEach(img => img.classList.remove("active"));
         images[index].classList.add("active");
+
+        if (etatPhoto) {
+          etatPhoto.textContent = images[index].dataset.etat || "";
+        }
       }
 
       prev.addEventListener("click", () => {
@@ -132,3 +138,4 @@
 </body>
 
 </html>
+
