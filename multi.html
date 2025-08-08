@@ -111,11 +111,16 @@
       const images = block.querySelectorAll(".carousel-images img");
       const prev = block.querySelector(".carousel-button.prev");
       const next = block.querySelector(".carousel-button.next");
+      const etatPhoto = block.querySelector(".etat-photo");
       let index = 0;
 
       function updateCarousel() {
         images.forEach(img => img.classList.remove("active"));
         images[index].classList.add("active");
+
+        if (etatPhoto) {
+          etatPhoto.textContent = images[index].dataset.etat || "";
+        }
       }
 
       prev.addEventListener("click", () => {
@@ -133,4 +138,5 @@
 </body>
 
 </html>
+
 
